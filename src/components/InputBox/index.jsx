@@ -29,6 +29,7 @@ const InputBox = () => {
 
     evaluate(url)
       .then((res) => {
+        console.log(res);
         if (res.status === 200) {
           if (res.data?.prediction === 1) {
             setIsLoading(false);

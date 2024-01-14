@@ -30,20 +30,19 @@ const InputBox = () => {
     evaluate(url)
       .then((res) => {
         if (res.status === 200) {
-          // if (res.data?.prediction === 1) {
-          //   setIsLoading(false);
-          //   setMalicious(true);
-          //   setVerdict(
-          //     "Seems like your input is malicious, might be XSS payload injected."
-          //   );
-          //   setImageName(res.data?.generated_image);
-          // } else {
-          //   setMalicious(false);
-          //   setVerdict(
-          //     "Your input is free from XSS payload, feel free to explore it."
-          //   );
-          // }
-          console.log(res.data);
+          if (res.data?.prediction === 1) {
+            setIsLoading(false);
+            setMalicious(true);
+            setVerdict(
+              "Seems like your input is malicious, might be XSS payload injected."
+            );
+            setImageName(res.data?.generated_image);
+          } else {
+            setMalicious(false);
+            setVerdict(
+              "Your input is free from XSS payload, feel free to explore it."
+            );
+          }
         }
       })
       .catch((err) => console.log(err));

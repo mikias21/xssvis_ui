@@ -43,6 +43,7 @@ const InputBox = () => {
               "Your input is free from XSS payload, feel free to explore it."
             );
           }
+          console.log(`${API}/images/${imageName}`);
         }
       })
       .catch((err) => console.log(err));

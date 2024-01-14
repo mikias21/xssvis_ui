@@ -29,6 +29,7 @@ const InputBox = () => {
 
     evaluate(url)
       .then((res) => {
+        console.log(res.data.prediction);
         if (res.status === 200) {
           setIsLoading(false);
           setImageName(res.data?.generated_image);
@@ -43,7 +44,7 @@ const InputBox = () => {
               "Your input is free from XSS payload, feel free to explore it."
             );
           }
-          console.log(`${API}/images/${imageName}`);
+          setURL("");
         }
       })
       .catch((err) => console.log(err));

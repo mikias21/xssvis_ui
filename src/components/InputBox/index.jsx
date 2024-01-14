@@ -37,6 +37,7 @@ const InputBox = () => {
               "Seems like your input is malicious, might be XSS payload injected."
             );
             setImageName(res.data?.generated_image);
+            console.log(res.data);
             console.log(imageName);
           } else {
             setMalicious(false);
@@ -48,9 +49,6 @@ const InputBox = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  console.log(imageName);
-  console.log(API);
 
   return (
     <div className="p-4 sm:p-7">

@@ -31,14 +31,13 @@ const InputBox = () => {
       .then((res) => {
         if (res.status === 200) {
           setIsLoading(false);
+          console.log(res.data);
           if (res.data?.prediction === "1") {
             setMalicious(true);
             setVerdict(
               "Seems like your input is malicious, might be XSS payload injected."
             );
             setImageName(res.data?.generated_image);
-            console.log(res.data);
-            console.log(imageName);
           } else {
             setMalicious(false);
             setVerdict(

@@ -56,7 +56,7 @@ const InputBox = () => {
             URL to evaluate
           </label>
           <input
-            type="url"
+            type="text"
             id="url"
             placeholder="peaste URL here"
             className="text-sm border border-slate-200 rounded-lg p-3 mt-3 font-poppins outline-none"

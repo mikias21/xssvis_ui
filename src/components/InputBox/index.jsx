@@ -2,7 +2,10 @@ import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
 // Service
+import constants from "../../utils/constants";
 import { evaluate } from "../../services/detector";
+
+const API = !constants.RELEASE ? constants.API : constants.RELEASE_API;
 
 const override = {
   display: "block",
@@ -101,7 +104,7 @@ const InputBox = () => {
               </p>
               {imageName && (
                 <img
-                  src={`http://localhost:8000/images/${imageName}`}
+                  src={`${API}/images/${imageName}`}
                   alt="GEN_IMG"
                   className=""
                 />

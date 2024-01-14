@@ -5,8 +5,6 @@ import constants from "../utils/constants";
 const API = !constants.RELEASE ? constants.API : constants.RELEASE_API;
 
 const evaluate = async (http_url) => {
-  console.log(http_url);
-
   const customHeader = {
     headers: {
       Accept: "application/json",

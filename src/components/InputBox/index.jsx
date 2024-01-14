@@ -48,6 +48,9 @@ const InputBox = () => {
       .catch((err) => console.log(err));
   };
 
+  console.log(imageName);
+  console.log(API);
+
   return (
     <div className="p-4 sm:p-7">
       <form action="" onSubmit={(e) => handleSubmit(e)}>

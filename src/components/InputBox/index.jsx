@@ -29,7 +29,6 @@ const InputBox = () => {
 
     evaluate(url)
       .then((res) => {
-        console.log(res.data.prediction);
         if (res.status === 200) {
           setIsLoading(false);
           setImageName(res.data?.generated_image);

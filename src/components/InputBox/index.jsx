@@ -30,8 +30,8 @@ const InputBox = () => {
     evaluate(url)
       .then((res) => {
         if (res.status === 200) {
-          if (res.data?.prediction === 1) {
-            setIsLoading(false);
+          setIsLoading(false);
+          if (res.data?.prediction === "1") {
             setMalicious(true);
             setVerdict(
               "Seems like your input is malicious, might be XSS payload injected."
